@@ -1,0 +1,16 @@
+:root {
+  --bg-color: rgb(8, 11, 18);
+  --card-bg-color: rgb(16, 19, 28);
+  --card-bg-lighter-color: rgb(32, 38, 56);
+
+  --button-bg-color: rgb(46, 55, 81);
+
+  --font-color: rgb(226, 230, 240);
+  --font: system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: var(--font);
+}

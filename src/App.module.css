@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.map {
+  margin-top: 24px;
+  height: 1200px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 36px;
+}
