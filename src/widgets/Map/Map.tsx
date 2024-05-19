@@ -1,4 +1,4 @@
-import type { Vehicle } from '@/interfaces/vehicle.interface';
+import type { Vehicle } from '@/shared/interfaces/vehicle.interface';
 import {
   YMap,
   YMapComponentsProvider,

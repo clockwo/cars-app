@@ -1,4 +1,4 @@
-import type { Vehicle } from '@/interfaces/vehicle.interface';
+import type { Vehicle } from '@/shared/interfaces/vehicle.interface';
 import styles from './Popup.module.css';
 import CloseIcon from '@/assets/close.svg';
 import cn from 'classnames';

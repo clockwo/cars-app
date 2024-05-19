@@ -8,7 +8,7 @@ interface Car {
   longitude: number;
 }
 
-export interface CardProps {
+export interface ItemProps {
   item: Car;
   onClick: () => void;
 }

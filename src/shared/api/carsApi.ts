@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios';
-import type { Vehicle } from '@/interfaces/vehicle.interface';
+import type { Vehicle } from '@/shared/interfaces/vehicle.interface';
 const PREFIX = 'https://test.tspb.su/test-task';
 
 export const getVehicles = async () => {

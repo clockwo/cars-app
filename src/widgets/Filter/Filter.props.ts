@@ -1,7 +1,7 @@
 import type {
   SortOptionsFieldType,
   SortOptionsOrderType,
-} from '@/helpers/types';
+} from '@/shared/types/types';
 
 export interface FilterProps {
   onSort: (field: SortOptionsFieldType, order: SortOptionsOrderType) => void;
