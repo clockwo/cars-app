@@ -1,8 +1,15 @@
 import type { Vehicle } from '@/shared/interfaces/vehicle.interface';
-import styles from './Popup.module.css';
-import CloseIcon from '@/assets/close.svg';
-import cn from 'classnames';
+import CloseIcon from '@mui/icons-material/Close';
 import { useEffect, useState } from 'react';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  IconButton,
+  TextField,
+} from '@mui/material';
 
 interface PopupProps {
   closeModal: () => void;
@@ -57,59 +64,74 @@ const Popup = ({
   };
 
   return (
-    <div
-      className={cn(styles.popup, {
-        [styles.active]: selectedItem !== null,
-      })}
-    >
-      <div className={styles.label}>
-        <label htmlFor="name">Наименование марки: </label>
-        <input
-          type="text"
+    <Dialog open={selectedItem !== null} onClose={closeModal}>
+      <DialogTitle>Настройки автомобиля</DialogTitle>
+      <IconButton
+        aria-label="close"
+        sx={{ position: 'absolute', right: 8, top: 8 }}
+        onClick={closeModal}
+      >
+        <CloseIcon />
+      </IconButton>
+      <DialogContent dividers>
+        <TextField
+          autoFocus
+          margin="dense"
           id="name"
           name="name"
+          label="Наименование автомобиля"
+          type="text"
+          fullWidth
+          variant="standard"
           value={values.name}
           onChange={onChangeInput}
         />
-      </div>
-
-      <div className={styles.label}>
-        <label htmlFor="model">Модель: </label>
-        <input
-          type="text"
+        <TextField
+          autoFocus
+          margin="dense"
           id="model"
           name="model"
+          label="Модель"
+          type="text"
+          fullWidth
+          variant="standard"
           value={values.model}
           onChange={onChangeInput}
         />
-      </div>
-
-      <div className={styles.label}>
-        <label htmlFor="price">Цена: </label>
-        <input
-          type="text"
+        <TextField
+          autoFocus
+          margin="dense"
           id="price"
           name="price"
+          label="Цена"
+          type="text"
+          fullWidth
+          variant="standard"
           value={values.price}
           onChange={onChangeInput}
         />
-      </div>
-
-      <button className={styles.close} onClick={closeModal}>
-        <img src={CloseIcon} alt="Close icon" width={24} height={24} />
-      </button>
-      <div className={styles.buttons}>
-        <button
-          className={styles.deleteButton}
+      </DialogContent>
+      <DialogActions
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          px: 3,
+          mt: 1,
+          mb: 1,
+        }}
+      >
+        <Button
+          color="error"
+          variant="contained"
           onClick={() => selectedItem && removeItem(selectedItem)}
         >
-          Удалить из списка
-        </button>
-        <button className={styles.submitButton} onClick={onSubmit}>
+          Удалить
+        </Button>
+        <Button color="success" variant="contained" onClick={onSubmit}>
           Подтвердить изменения
-        </button>
-      </div>
-    </div>
+        </Button>
+      </DialogActions>
+    </Dialog>
   );
 };
 

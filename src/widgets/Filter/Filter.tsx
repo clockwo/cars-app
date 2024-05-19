@@ -27,6 +27,7 @@ const Filter = ({ onSort }: FilterProps) => {
       <Button
         onClick={() => handleButtonClick(sortOptionsField.price)}
         variant="contained"
+        color={activeButton === sortOptionsField.price ? 'success' : 'primary'}
         endIcon={
           activeButton === sortOptionsField.price && (
             <SortIcon
@@ -43,6 +44,7 @@ const Filter = ({ onSort }: FilterProps) => {
       <Button
         onClick={() => handleButtonClick(sortOptionsField.year)}
         variant="contained"
+        color={activeButton === sortOptionsField.year ? 'success' : 'primary'}
         endIcon={
           activeButton === sortOptionsField.year && (
             <SortIcon

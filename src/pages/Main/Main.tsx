@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { getVehicles } from '@/shared/api/carsApi';
-import Card from '@/shared/ui/Item/Item';
 import { Vehicle } from '@/shared/interfaces/vehicle.interface';
 import {
   SortOptionsFieldType,
